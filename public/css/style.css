@@ -1,0 +1,90 @@
+#fondlogo {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+}
+#infocompte{
+    background-color: lightpink;
+    float: right;
+    text-align: center;
+    color: #fff;
+}
+#menu1 {
+    display: inline-block;
+    background-color: #ff9ebd;
+    border-radius: 20px;
+
+}
+
+.menu ul {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+.menu ul li {
+
+}
+
+nav ul li a {
+    margin: 0 auto
+    color: #fff !important;
+    text-align: center;
+}
+
+#logo img {
+    width : 50%;
+}
+
+
+li{
+    list-style: none;
+    margin-left: 20px;
+
+}
+
+#slideshow {
+    padding: 2%;
+
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+#centre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+
+}
+
+#centre img {
+    width: 15%;
+    margin: 0 auto;
+
+}
+
+#illustrations {
+    position: relative;
+}
+
+#rose {
+    top: 50px;
+    position: relative;
+    background-color: #ff92c3;
+    color: #fff;
+}
+
+body{
+    background-color: #faeeee;
+}
+
+.carousel {
+    width: 70%;
+}
