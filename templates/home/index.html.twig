@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Easy Wedding {{ controller_name }}!{% endblock %}
 
 {% block body %}
 <style>
@@ -8,13 +8,131 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div id="fondlogo" class="col-sm-8 col-lg-8">
+                <div id="logo">
+                    <img src="img/Logo.png">
+                </div>
+            </div>
+            <div id="infocompte" class="col-sm-4 col-lg-4">
+                <div class="compte"><h2>Mon Compte</h2></div>
+                <div class="compte"><h2>Inscrivez-vous</h2></div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="menu1" class="col-sm-12 col-lg-12">
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a>Accueil</a>
+                        </li>
+                        <li>
+                            <a>Prestations</a>
+                        </li>
+                        <li>
+                            <a>Lieux</a>
+                        </li>
+                        <li>
+                            <a>Lien2</a>
+                        </li>
+                        <li>
+                            <a>lien3</a>
+                        </li>
+                        <li>
+                            <a>Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <main>
+            <div class="row">
+                <div id="slideshow" class="offset-lg-2 col-sm-10 col-lg-10">
+
+                    <div id="defilement" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#defilement" data-slide-to="0" class="active"></li>
+                            <li data-target="#defilement" data-slide-to="1"></li>
+                            <li data-target="#defilement" data-slide-to="2"></li>
+                            <li data-target="#defilement" data-slide-to="3"></li>
+                            <li data-target="#defilement" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/pix1-0.jpg" alt="chat" width="1100" height="500">
+                                <div class="carousel-caption">
+                                    <h3>Mariage1</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/pix3-1.jpg" alt="chat" width="1100" height="500">
+                                <div class="carousel-caption">
+                                    <h3>Mariage2</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/pix4-3.jpg" alt="Chat" width="1100" height="500">
+                                <div class="carousel-caption">
+                                    <h3>Mariage3</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/pix2-2.jpg" alt="Chat" width="1100" height="500">
+                                <div class="carousel-caption">
+                                    <h3>Mariage4</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                        <a class="carousel-control-prev" href="#defilement" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#defilement" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div id="centre" class="offset-lg-2 col-sm-12 col-lg-8" >
+                    <section id="illustrations">
+                        <img src="img/robe.png">
+                        <img src="img/bague.png">
+                        <img src="img/champ.png">
+                        <img src="img/costume.png">
+                        <img src="img/dj.png">
+                        <img src="img/repas.png">
+                    </section>
+                </div>
+
+
+
+            </div>
+        </main>
+        <footer>
+            <div id="rose" class="row">
+                <div id="blue" class="offset-lg-2 col-sm-4 col-lg-2"><h2>RESEAUX SOCIAUX</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam aspernatur blanditiis consequuntur dolor dolore earum esse hic ipsa labore magni nam natus praesentium quae quaerat quod similique, ullam vel.
+                </div>
+                <div id="blue" class="offset-lg-1 col-sm-4 col-lg-2"><h2>QUI SOMMES NOUS</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur cumque doloremque doloribus iusto molestiae mollitia ut vitae? Doloribus eveniet ex laboriosam libero magni, minus natus quis repellat sapiente sunt.
+                </div>
+                <div id="blue" class="offset-lg-1 col-sm-4 col-lg-2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41101.894107878936!2d1.0484701373485654!3d49.920045177734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0a207670619f9%3A0xaea20a3d78418545!2s76200+Dieppe!5e0!3m2!1sfr!2sfr!4v1526308758965" width="300" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
 {% endblock %}
