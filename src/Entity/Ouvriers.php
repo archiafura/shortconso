@@ -9,10 +9,10 @@
 namespace App\Entity;
 
 
-class Professionnels
+class Ouvriers
 {
 protected $name;
-protected $catégorie;
+protected $categorie;
 protected $siret;
 
 
@@ -35,17 +35,17 @@ protected $siret;
     /**
      * @return mixed
      */
-    public function getCatégorie()
+    public function getCategorie()
     {
-        return $this->catégorie;
+        return $this->categorie;
     }
 
     /**
-     * @param mixed $catégorie
+     * @param mixed $categorie
      */
-    public function setCatégorie($catégorie): void
+    public function setCategorie($categorie): void
     {
-        $this->catégorie = $catégorie;
+        $this->categorie = $categorie;
     }
 
     /**
