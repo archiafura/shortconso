@@ -7,21 +7,26 @@
 
         <main>
             <div class="row">
-                <h1>Choisir son lieu de mariage</h1>
+
+
+                <h1 id="choixlieu">Choisir son lieu de mariage</h1>
 
 
 
 
             </div>
 
+            <br>
+            <br>
+
             <div class="row">
 
                 <div id="centre" class="offset-lg-2 col-sm-12 col-lg-8" >
                     <section id="illustrations">
-                        <img src="img/cocotier.jpg">
-                        <img src="img/chateau.jpg">
-                        <img src="img/lv.jpg">
-                        <img src="img/cimetiere.jpg">
+                        <a href="{{ path('lieux') }}"> <img src="img/cocotier.jpg"> </a>
+                        <a href="{{ path('lieux') }}"> <img src="img/chateau.jpg"></a>
+                            <a href="{{ path('lieux') }}"><img src="img/lv.jpg"></a>
+                                <a href="{{ path('lieux') }}"> <img src="img/cimetiere.jpg"></a>
 
 
                     </section>
