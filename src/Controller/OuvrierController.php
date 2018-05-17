@@ -4,8 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Ouvriers;
 use function Sodium\add;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,20 +44,18 @@ class OuvrierController extends Controller
             ->getForm();
 
 
-        if ($requete->isMethod('POST')) {
+
             $formulaire->handleRequest($requete);
 
             if ($formulaire->isSubmitted() && $formulaire->isValid()) {
-                $ouvrier = $this->getDoctrine()->getManager();
-                $ouvrier->persist($ouvrier);
-                $ouvrier->flush();
+                $ouvrier = $this->getData();
 
-                $requete->getSession()->getFlashBag()->add('notice', 'ok');
+
 
                 return $this->redirectToRoute('ouvriers_formok', array('id' => $ouvrier->getId()));
 
             }
-        }
+
 
         return $this->render('ouvriers/index.html.twig', array('formulaire' => $formulaire->createView()));
 
