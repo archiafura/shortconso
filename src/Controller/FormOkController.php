@@ -8,11 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class FormOkController extends Controller
 {
     /**
-     * @Route("/form/ok", name="form_ok")
+     * @Route("/formok", name="formok")
      */
     public function index()
     {
-        return $this->render('form_ok/index.html.twig', [
+        return $this->render('formok/index.html.twig', [
             'controller_name' => 'FormOkController',
         ]);
     }

@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Ouvriers;
 use function Sodium\add;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,53 +16,63 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 class OuvrierController extends Controller
 {
     /**
-     * @Route("/ouvrier", name="ouvrier")
+     * @Route("/ouvriers", name="ouvriers")
      */
     public function index()
     {
-        return $this->render('ouvrier/index.html.twig', [
+        return $this->render('ouvriers/index.html.twig', [
             'controller_name' => 'OuvrierController',
         ]);
     }
 
 
     /**
-   * @Route("/ouvrier/formulaire", name="ouvrier_formulaire")
-*/
+     * @Route("/ouvriers/formulaire", name="ouvriers_formulaire")
+     */
 
-public function  formulaire(Request $requete)
-{
-    $ouvrier = new Ouvriers();
-    $ouvrier->setName('Pronuptia');
-    $ouvrier->setCategorie('Robes de mariée');
-    $ouvrier->setSiret(125436789);
+    public function formulaire(Request $requete)
+    {
+        $ouvrier = new Ouvriers();
+        $ouvrier->setName('Pronuptia');
+        $ouvrier->setCategorie('Robes de mariée');
+        $ouvrier->setSiret(125436789);
 
-    $formulaire = $this->createFormBuilder($ouvrier)
-    ->add('name', TextType::class)
-    ->add('categorie', TextType::class)
-    ->add('siret', NumberType::class)
-        ->add('envoyer', SubmitType::class, array('label' => 'Inscrire professionnel'))
-        ->getForm();
+        $formulaire = $this->createFormBuilder($ouvrier)
+            ->add('name', TextType::class)
+            ->add('categorie', TextType::class)
+            ->add('siret', NumberType::class)
+            ->add('envoyer', SubmitType::class, array('label' => 'Inscrire professionnel'))
+            ->getForm();
 
 
-    $formulaire->handleRequest($requete);
+        if ($requete->isMethod('POST')) {
+            $formulaire->handleRequest($requete);
 
-    if ($formulaire->isSubmitted() && $formulaire->isValid()){
-        $ouvrier = $formulaire->getData();
-        return $this->redirectToRoute('ouvrier_formOk');
+            if ($formulaire->isSubmitted() && $formulaire->isValid()) {
+                $ouvrier = $this->getDoctrine()->getManager();
+                $ouvrier->persist($ouvrier);
+                $ouvrier->flush();
+
+                $requete->getSession()->getFlashBag()->add('notice', 'ok');
+
+                return $this->redirectToRoute('ouvriers_formok', array('id' => $ouvrier->getId()));
+
+            }
+        }
+
+        return $this->render('ouvriers/index.html.twig', array('formulaire' => $formulaire->createView()));
 
 
     }
 
-    return $this->render('ouvrier/index.html.twig' , array('formulaire' => $formulaire->createView()));
+    /**
+     * @Route("/formok", name="ouvriers_formok")
+     */
 
-
-}
-
-public function formulaireOk ()
-{
-    return $this->render('ouvrier_formOk.html.twig');
-}
+    public function formulaireOk ()
+    {
+        return $this->render('formok/index.html.twig');
+    }
 
 
 }
